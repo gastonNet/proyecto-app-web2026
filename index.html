@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyecto Ecommerce - Esqueleto</title>
+</head>
+<body>
+  <header>
+      <nav aria-label="Principal">
+        <a href="#" aria-label="Inicio"><strong>MiEcommerce</strong></a>
+        <form role="search" aria-label="Buscar productos">
+          <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+        </form>
+        <small><a href="#">Iniciar sesión</a> | <a href="#">Carrito (0)</a></small>
+      </nav>
+  </header>
+
+  <main>
+      <!-- Sección principal / Hero -->
+      <section id="hero">
+        <h1>Bienvenido a MiEcommerce</h1>
+        <p>Este es el esqueleto principal del proyecto. Reemplaza este contenido con tu hero, banner o slider.</p>
+      </section>
+
+      <!-- Sección de artículos destacados -->
+      <section id="featured" class="featured" aria-labelledby="featured-heading">
+        <h2 id="featured-heading">Artículos destacados</h2>
+        <p>Seleccionados especialmente para mostrar en la página principal.</p>
+        <ul>
+          <li>
+            <article aria-label="Producto destacado 1">
+              <h3>Producto Destacado 1</h3>
+              <p>Breve descripción.</p>
+            </article>
+          </li>
+          <li>
+            <article aria-label="Producto destacado 2">
+              <h3>Producto Destacado 2</h3>
+              <p>Breve descripción.</p>
+            </article>
+          </li>
+          <li>
+            <article aria-label="Producto destacado 3">
+              <h3>Producto Destacado 3</h3>
+              <p>Breve descripción.</p>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Layout con filtros + listado de productos -->
+      <section role="region" aria-label="Listado de productos y filtros">
+        <!-- Sección de filtros -->
+        <aside id="filters" aria-labelledby="filters-heading">
+          <h3 id="filters-heading">Filtros</h3>
+          <form>
+            <!-- Ejemplos de filtros -->
+            <label><input type="checkbox" name="nuevo"> Nuevo</label>
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria">
+              <option value="todas">Todas</option>
+              <option value="ropa">Ropa</option>
+              <option value="electronica">Electrónica</option>
+              <option value="hogar">Hogar</option>
+            </select>
+            <label for="precio-min">Precio mínimo</label>
+            <input id="precio-min" name="precio-min" type="number" min="0">
+            <button type="submit">Aplicar</button>
+          </form>
+        </aside>
+
+        <!-- Sección de productos -->
+        <section id="products" aria-labelledby="products-heading">
+          <h2 id="products-heading">Productos</h2>
+          <p>Listado de productos. Aquí irá el grid o lista principal del catálogo.</p>
+          <ul>
+            <li>
+              <article aria-label="Producto 1">
+                <h3>Producto 1</h3>
+                <p>Descripción corta.</p>
+              </article>
+            </li>
+            <li>
+              <article aria-label="Producto 2">
+                <h3>Producto 2</h3>
+                <p>Descripción corta.</p>
+              </article>
+            </li>
+            <li>
+              <article aria-label="Producto 3">
+                <h3>Producto 3</h3>
+                <p>Descripción corta.</p>
+              </article>
+            </li>
+            <li>
+              <article aria-label="Producto 4">
+                <h3>Producto 4</h3>
+                <p>Descripción corta.</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span> MiEcommerce — Proyecto Universidad</p>
+    <p><small>Enlace a políticas, contacto o información adicional.</small></p>
+  </footer>
+
+  <script>
+    // Pequeño script para actualizar el año automáticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
