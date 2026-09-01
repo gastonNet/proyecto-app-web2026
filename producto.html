@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto - MiEcommerce</title>
+</head>
+<body>
+  <header>
+    <nav aria-label="Navegación principal">
+      <a href="index.html" aria-label="Volver a la página principal"><strong>MiEcommerce</strong></a>
+      <a href="index.html">Volver al catálogo</a>
+      <a href="#carrito">Carrito (1)</a>
+    </nav>
+  </header>
+
+  <main>
+    <article aria-labelledby="producto-titulo">
+      <header>
+        <p><a href="index.html">Inicio</a> / <a href="index.html">Productos</a> / Auriculares Bluetooth</p>
+      </header>
+
+      <section aria-label="Imagen y detalles del producto">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=80" alt="Auriculares Bluetooth negros sobre fondo claro" width="600" height="500">
+        </figure>
+
+        <div>
+          <p>Electrónica</p>
+          <h1 id="producto-titulo">Auriculares Bluetooth</h1>
+          <p><strong>Precio: $59.990</strong></p>
+          <p>Calificación: ★★★★★ (4.8/5)</p>
+
+          <form aria-label="Agregar producto al carrito">
+            <label for="cantidad">Cantidad</label>
+            <input id="cantidad" name="cantidad" type="number" min="1" value="1">
+            <button type="submit">Agregar al carrito</button>
+          </form>
+        </div>
+      </section>
+
+      <section aria-labelledby="descripcion-titulo">
+        <h2 id="descripcion-titulo">Descripción</h2>
+        <p>
+          Disfruta de un sonido claro y envolvente con estos auriculares Bluetooth diseñados para tu día a día.
+          Ofrecen batería de larga duración, conexión inalámbrica rápida y un ajuste cómodo para largas sesiones de música,
+          trabajo o llamadas.
+        </p>
+        <ul>
+          <li>Conexión Bluetooth 5.0</li>
+          <li>Hasta 20 horas de reproducción</li>
+          <li>Micrófono integrado</li>
+          <li>Diseño ligero y plegable</li>
+        </ul>
+      </section>
+    </article>
+
+    <aside id="carrito" aria-labelledby="carrito-titulo">
+      <h2 id="carrito-titulo">Carrito de compras</h2>
+      <ul>
+        <li>
+          <strong>Auriculares Bluetooth</strong>
+          <span>1 x $59.990</span>
+        </li>
+      </ul>
+      <p><strong>Total: $59.990</strong></p>
+      <button type="button">Finalizar compra</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MiEcommerce</p>
+  </footer>
+</body>
+</html>
