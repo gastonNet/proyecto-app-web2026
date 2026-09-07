@@ -2,3 +2,5 @@
 1. Voy a crear el esqueleto basico de html para el index. 
 
 2. Voy a crear la pagina de productos asi se ve en detalle cada producto.
+
+3. Ahara aplicare estilos, voy a pedirle que sea un estilo moderno con colores azul y blanco, creando un archivo aparte de CSS.
