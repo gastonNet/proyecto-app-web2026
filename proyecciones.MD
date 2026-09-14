@@ -8,3 +8,6 @@
 4. Bueno en la clase empezamos a ver los mediaquery entonces voy a pedirle a la ia que los agregue y voy a poner en practica el Movile first.
 
 5. Voy a pedirle a la ia hacer una pagina la del carrito para poder finalizar la compra.
+
+6. Puse la IA para preguntar en ASK si podia agregar en productos destacados
+como en carrousel y quedo bien, yo modifique el tiempo nada mas en el que cambia y lo que era el ancho.

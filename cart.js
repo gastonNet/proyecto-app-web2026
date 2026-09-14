@@ -1,3 +1,4 @@
+/* Carrito de compras */
 const CART_KEY = 'miecommerce-cart';
 
 function getCart() {
@@ -97,8 +98,46 @@ document.getElementById('payment-form')?.addEventListener('submit', (event) => {
     transferencia: 'transferencia bancaria',
     efectivo: 'pago en efectivo'
   };
-  document.getElementById('checkout-message').textContent = `Elegiste ${paymentNames[payment]}. El pedido está listo para continuar.`;
+  document.getElementById('checkout-message').textContent = `Elegiste ${paymentNames[payment]}.
+  El pedido está listo para continuar.`;
 });
 
 updateCartCount();
 renderCart();
+
+/* Carousel de productos destacados */
+  const featuredItems = document.querySelectorAll(
+    '#featured .featured-track > li'
+  );
+
+  let currentFeatured = 0;
+  let featuredTimer;
+
+  function showFeatured(index) {
+    featuredItems.forEach((item, itemIndex) => {
+      item.classList.toggle('active', itemIndex === index);
+    });
+  }
+
+  function startFeaturedCarousel() {
+    featuredTimer = setInterval(() => {
+      currentFeatured = (currentFeatured + 1) % featuredItems.length;
+      showFeatured(currentFeatured);
+    }, 2000);
+  }
+
+  function stopFeaturedCarousel() {
+    clearInterval(featuredTimer);
+  }
+
+  if (featuredItems.length > 0) {
+    showFeatured(currentFeatured);
+    startFeaturedCarousel();
+
+    const featuredSection = document.querySelector('#featured');
+
+    featuredSection.addEventListener('mouseenter', stopFeaturedCarousel);
+    featuredSection.addEventListener('mouseleave', startFeaturedCarousel);
+    featuredSection.addEventListener('focusin', stopFeaturedCarousel);
+    featuredSection.addEventListener('focusout', startFeaturedCarousel);
+  }
