@@ -6,3 +6,5 @@
 3. Ahara aplicare estilos, voy a pedirle que sea un estilo moderno con colores azul y blanco, creando un archivo aparte de CSS.
 
 4. Bueno en la clase empezamos a ver los mediaquery entonces voy a pedirle a la ia que los agregue y voy a poner en practica el Movile first.
+
+5. Voy a pedirle a la ia hacer una pagina la del carrito para poder finalizar la compra.
