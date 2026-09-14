@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito de compra - MiEcommerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Navegación principal">
+      <a href="index.html" aria-label="Volver a la página principal"><strong>MiEcommerce</strong></a>
+      <a href="index.html">Seguir comprando</a>
+      <small><a href="carrito.html">Carrito (<span class="cart-count">0</span>)</a></small>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+    <header class="page-heading">
+      <p><a href="index.html">Inicio</a> / Carrito</p>
+      <h1>Tu carrito de compra</h1>
+      <p>Revisa tus productos antes de elegir cómo pagar.</p>
+    </header>
+
+    <div class="cart-layout">
+      <section class="cart-items" aria-labelledby="items-heading">
+        <h2 id="items-heading">Productos seleccionados</h2>
+        <div id="cart-list" aria-live="polite"></div>
+      </section>
+
+      <aside class="cart-summary" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Resumen del pedido</h2>
+        <dl>
+          <div><dt>Subtotal</dt><dd id="cart-subtotal">$0</dd></div>
+          <div><dt>Envío</dt><dd>Gratis</dd></div>
+          <div class="summary-total"><dt>Total</dt><dd id="cart-total">$0</dd></div>
+        </dl>
+
+        <form id="payment-form">
+          <fieldset>
+            <legend>Forma de pago</legend>
+            <label><input type="radio" name="payment" value="tarjeta" required> Tarjeta de crédito o débito</label>
+            <label><input type="radio" name="payment" value="transferencia"> Transferencia bancaria</label>
+            <label><input type="radio" name="payment" value="efectivo"> Pago en efectivo</label>
+          </fieldset>
+          <button type="submit" id="checkout-button">Continuar al pago</button>
+          <p id="checkout-message" class="form-message" role="status"></p>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span> MiEcommerce - Proyecto Universidad</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="cart.js"></script>
+</body>
+</html>

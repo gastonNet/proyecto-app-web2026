@@ -13,7 +13,7 @@
         <form role="search" aria-label="Buscar productos">
           <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
         </form>
-        <small><a href="#">Iniciar sesión</a> | <a href="#">Carrito (0)</a></small>
+        <small><a href="#">Iniciar sesión</a> | <a href="carrito.html" class="cart-link">Carrito (<span class="cart-count">0</span>)</a></small>
       </nav>
   </header>
 
@@ -83,7 +83,7 @@
                 <p>Sonido claro, conexión inalámbrica y gran comodidad para uso diario.</p>
                 <p><strong>Precio: $59.990</strong></p>
                 <p><a href="producto.html">Ver producto</a></p>
-                <button type="button">Agregar al carrito</button>
+                <button type="button" class="add-to-cart" data-product-id="auriculares" data-product-name="Auriculares Bluetooth" data-product-price="59990">Agregar al carrito</button>
               </article>
             </li>
 
@@ -93,7 +93,7 @@
                 <p>Monitorea tu actividad, recibe notificaciones y sigue tus objetivos.</p>
                 <p><strong>Precio: $89.990</strong></p>
                 <p><a href="producto.html">Ver producto</a></p>
-                <button type="button">Agregar al carrito</button>
+                <button type="button" class="add-to-cart" data-product-id="reloj" data-product-name="Smartwatch Pro" data-product-price="89990">Agregar al carrito</button>
               </article>
             </li>
 
@@ -103,7 +103,7 @@
                 <p>Ideal para capturar recuerdos con excelente calidad y diseño portátil.</p>
                 <p><strong>Precio: $129.990</strong></p>
                 <p><a href="producto.html">Ver producto</a></p>
-                <button type="button">Agregar al carrito</button>
+                <button type="button" class="add-to-cart" data-product-id="camara" data-product-name="Cámara Compacta" data-product-price="129990">Agregar al carrito</button>
               </article>
             </li>
 
@@ -113,7 +113,7 @@
                 <p>Comodidad, estilo y resistencia para moverte todos los días.</p>
                 <p><strong>Precio: $74.990</strong></p>
                 <p><a href="producto.html">Ver producto</a></p>
-                <button type="button">Agregar al carrito</button>
+                <button type="button" class="add-to-cart" data-product-id="zapatillas" data-product-name="Zapatillas Urbanas" data-product-price="74990">Agregar al carrito</button>
               </article>
             </li>
           </ul>
@@ -124,28 +124,28 @@
             <h3 id="detalle-auriculares">Auriculares Bluetooth</h3>
             <p>Diseñados para escuchar música, atender llamadas y disfrutar de audio nítido durante largas jornadas.</p>
             <p><strong>$59.990</strong></p>
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="add-to-cart" data-product-id="auriculares" data-product-name="Auriculares Bluetooth" data-product-price="59990">Agregar al carrito</button>
           </article>
 
           <article id="producto-reloj-detalle" aria-labelledby="detalle-reloj">
             <h3 id="detalle-reloj">Smartwatch Pro</h3>
             <p>Reloj inteligente con monitoreo de salud, seguimiento deportivo y pantalla brillante para uso diario.</p>
             <p><strong>$89.990</strong></p>
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="add-to-cart" data-product-id="reloj" data-product-name="Smartwatch Pro" data-product-price="89990">Agregar al carrito</button>
           </article>
 
           <article id="producto-camara-detalle" aria-labelledby="detalle-camara">
             <h3 id="detalle-camara">Cámara Compacta</h3>
             <p>Captura fotos nítidas y vídeos fluidos con facilidad, ideal para viajes y contenido espontáneo.</p>
             <p><strong>$129.990</strong></p>
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="add-to-cart" data-product-id="camara" data-product-name="Cámara Compacta" data-product-price="129990">Agregar al carrito</button>
           </article>
 
           <article id="producto-zapatillas-detalle" aria-labelledby="detalle-zapatillas">
             <h3 id="detalle-zapatillas">Zapatillas Urbanas</h3>
             <p>Combinan estilo moderno, amortiguación y resistencia para tu rutina diaria.</p>
             <p><strong>$74.990</strong></p>
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="add-to-cart" data-product-id="zapatillas" data-product-name="Zapatillas Urbanas" data-product-price="74990">Agregar al carrito</button>
           </article>
         </section>
       </section>
@@ -161,5 +161,6 @@
     // Pequeño script para actualizar el año automáticamente
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="cart.js"></script>
 </body>
 </html>
