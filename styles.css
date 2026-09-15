@@ -142,6 +142,38 @@ main {
   color: #e7f0ff;
   font-size: 1.08rem;
 }
+/* Aqui los estilos para el carusel */
+  #featured .featured-track {
+    display: flex;
+    justify-content: center;
+    min-height: 170px;
+    padding: 0;
+    list-style: none;
+  }
+
+  #featured .featured-track li {
+    display: none;
+    width: min(100%, 1100px);
+  }
+
+  #featured .featured-track li.active {
+    display: block;
+    animation: featured-fade 2s;
+  }
+
+  @keyframes featured-fade {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+/* carousel hasta aca */
+
 
 #featured,
 #products,
