@@ -143,35 +143,55 @@ main {
   font-size: 1.08rem;
 }
 /* Aqui los estilos para el carusel */
-  #featured .featured-track {
-    display: flex;
-    justify-content: center;
-    min-height: 170px;
-    padding: 0;
-    list-style: none;
+.featured-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+#featured .featured-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 300%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  animation: slide-products 9s infinite;
+}
+
+#featured .featured-track > li {
+  flex: 0 0 33.333%;
+  width: auto;
+  padding: 1rem;
+}
+
+@keyframes slide-products {
+  0%, 28% {
+    transform: translateX(0);
   }
 
-  #featured .featured-track li {
-    display: none;
-    width: min(100%, 1100px);
+  33%, 61% {
+    transform: translateX(-33.333%);
   }
 
-  #featured .featured-track li.active {
-    display: block;
-    animation: featured-fade 2s;
+  66%, 94% {
+    transform: translateX(-66.666%);
   }
 
-  @keyframes featured-fade {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  100% {
+    transform: translateX(0);
   }
+}
+
+.featured-viewport:hover .featured-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-track {
+    animation: none;
+  }
+}
+
 /* carousel hasta aca */
 
 
