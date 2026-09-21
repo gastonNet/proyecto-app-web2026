@@ -13,3 +13,6 @@
 como en carrousel y quedo bien, yo modifique el tiempo nada mas en el que cambia y lo que era el ancho.
 
 7. Pido corregir el carrusel a la IA para que sea solo CSS sin el javascript y que los productos se muestren de a uno y en forma horizontal en forma de desplazamiento lateral.
+
+8. Pido a la IA refacactorizar el codigo CSS y que indente las lineas asi es mas ordenado para 
+entender y explicar.
