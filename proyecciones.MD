@@ -16,3 +16,5 @@ como en carrousel y quedo bien, yo modifique el tiempo nada mas en el que cambia
 
 8. Pido a la IA refacactorizar el codigo CSS y que indente las lineas asi es mas ordenado para 
 entender y explicar.
+
+9. Se arregla detalles del navbar.

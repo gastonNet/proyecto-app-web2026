@@ -9,9 +9,15 @@
 <body>
   <header>
     <nav aria-label="Navegación principal">
-      <a href="index.html" aria-label="Volver a la página principal"><strong>MiEcommerce</strong></a>
-      <a href="index.html">Seguir comprando</a>
-      <small><a href="carrito.html">Carrito (<span class="cart-count">0</span>)</a></small>
+      <a href="index.html" class="brand" aria-label="Inicio"><strong>MiEcommerce</strong></a>
+      <div class="nav-actions">
+        <a href="#">Iniciar sesión</a>
+        <a href="carrito.html" class="cart-link" aria-label="Carrito, 0 productos">
+          <span class="cart-icon" aria-hidden="true">&#128722;</span>
+          <span class="visually-hidden">Carrito</span>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
     </nav>
   </header>
 
