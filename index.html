@@ -8,13 +8,17 @@
 </head>
 <body>
   <header>
-      <nav aria-label="Principal">
-        <a href="#" aria-label="Inicio"><strong>MiEcommerce</strong></a>
-        <form role="search" aria-label="Buscar productos">
-          <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
-        </form>
-        <small><a href="#">Iniciar sesión</a> | <a href="carrito.html" class="cart-link">Carrito (<span class="cart-count">0</span>)</a></small>
-      </nav>
+    <nav aria-label="Navegación principal">
+      <a href="index.html" class="brand" aria-label="Inicio"><strong>MiEcommerce</strong></a>
+      <div class="nav-actions">
+        <a href="#">Iniciar sesión</a>
+        <a href="carrito.html" class="cart-link" aria-label="Carrito, 0 productos">
+          <span class="cart-icon" aria-hidden="true">&#128722;</span>
+          <span class="visually-hidden">Carrito</span>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </nav>
   </header>
 
   <main>
