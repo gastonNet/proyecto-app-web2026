@@ -20,3 +20,5 @@ entender y explicar.
 9. Se arregla detalles del navbar.
 
 10. Pido a la IA la pagina de administrador con un ABM para manipulacion de los productos de la pagina, manteniendo todos los estilos.css, que se va a ingresar  por la parte de iniciar sesion.
+
+11. Y arregle en la parte final de la pagina copiando de Mercadolibre la parte de "beneficios y legales" para que quede un poco mas profesional.

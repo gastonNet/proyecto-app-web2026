@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administraci&oacute;n de productos - MiEcommerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Navegaci&oacute;n principal">
+      <a href="index.html" class="brand" aria-label="Inicio"><strong>MiEcommerce</strong></a>
+      <div class="nav-actions">
+        <a href="index.html">Volver a la tienda</a>
+        <a href="carrito.html" class="cart-link" aria-label="Ir al carrito">
+          <span class="cart-icon" aria-hidden="true">&#128722;</span>
+          <span class="visually-hidden">Carrito</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-page">
+    <header class="page-heading">
+      <p><a href="index.html">Inicio</a> / Administraci&oacute;n</p>
+      <h1>Administraci&oacute;n de productos</h1>
+      <p>Gestiona el cat&aacute;logo de productos de la tienda.</p>
+    </header>
+
+    <section class="admin-panel" aria-labelledby="product-form-heading">
+      <header class="admin-section-heading">
+        <div>
+          <h2 id="product-form-heading">Datos del producto</h2>
+          <p>Producto de ejemplo: Auriculares Bluetooth</p>
+        </div>
+        <button type="button" class="admin-secondary-button">Nuevo producto</button>
+      </header>
+
+      <div class="admin-form">
+        <div class="admin-field">
+          <label for="product-name">Nombre</label>
+          <input id="product-name" name="product-name" type="text" value="Auriculares Bluetooth">
+        </div>
+        <div class="admin-field">
+          <label for="product-category">Categor&iacute;a</label>
+          <select id="product-category" name="product-category">
+            <option value="electronica" selected>Electr&oacute;nica</option>
+            <option value="ropa">Ropa</option>
+            <option value="hogar">Hogar</option>
+          </select>
+        </div>
+        <div class="admin-field">
+          <label for="product-price">Precio</label>
+          <input id="product-price" name="product-price" type="number" min="0" value="59990">
+        </div>
+        <div class="admin-field">
+          <label for="product-stock">Estado</label>
+          <select id="product-stock" name="product-stock">
+            <option value="active" selected>Publicado</option>
+            <option value="draft">Borrador</option>
+          </select>
+        </div>
+        <div class="admin-field admin-field-wide">
+          <label for="product-description">Descripci&oacute;n</label>
+          <textarea id="product-description" name="product-description" rows="3">Sonido claro, conexi&oacute;n inal&aacute;mbrica y gran comodidad para uso diario.</textarea>
+        </div>
+      </div>
+
+      <div class="admin-form-actions">
+        <button type="button">Guardar cambios</button>
+        <button type="button" class="admin-secondary-button">Cancelar</button>
+      </div>
+    </section>
+
+    <section class="admin-panel" aria-labelledby="product-list-heading">
+      <header class="admin-section-heading">
+        <div>
+          <h2 id="product-list-heading">Productos</h2>
+          <p>4 productos en el cat&aacute;logo</p>
+        </div>
+      </header>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Categor&iacute;a</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Estado</th>
+              <th scope="col"><span class="visually-hidden">Acciones</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Auriculares Bluetooth</th>
+              <td>Electr&oacute;nica</td>
+              <td>$59.990</td>
+              <td><span class="admin-status">Publicado</span></td>
+              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Smartwatch Pro</th>
+              <td>Electr&oacute;nica</td>
+              <td>$89.990</td>
+              <td><span class="admin-status">Publicado</span></td>
+              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
+            </tr>
+            <tr>
+              <th scope="row">C&aacute;mara Compacta</th>
+              <td>Electr&oacute;nica</td>
+              <td>$129.990</td>
+              <td><span class="admin-status">Publicado</span></td>
+              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Zapatillas Urbanas</th>
+              <td>Ropa</td>
+              <td>$74.990</td>
+              <td><span class="admin-status">Publicado</span></td>
+              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span> MiEcommerce - Proyecto Universidad</p>
+  </footer>
+</body>
+</html>
