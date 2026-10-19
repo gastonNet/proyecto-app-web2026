@@ -358,12 +358,46 @@ section[role="region"] {
 
 #filters form {
   display: grid;
-  gap: 10px;
+  gap: 16px;
 }
 
 #filters label {
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+#filters .filter-field {
+  display: grid;
+  gap: 6px;
+}
+
+#filters .price-input {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+}
+
+#filters .price-input span {
+  padding-left: 13px;
+  color: var(--muted);
+}
+
+#filters .price-input input {
+  border: 0;
+  box-shadow: none;
+}
+
+#filters .price-input:focus-within {
+  outline: 3px solid rgba(52, 131, 250, 0.3);
+  outline-offset: 2px;
+}
+
+#filters .filter-field small {
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 #filters label:first-child {
@@ -1132,4 +1166,3 @@ footer small {
       grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     }
   }
-

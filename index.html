@@ -73,15 +73,31 @@
           <form>
             <!-- Ejemplos de filtros -->
             <label><input type="checkbox" name="nuevo"> Nuevo</label>
-            <label for="categoria">Categoría</label>
-            <select id="categoria" name="categoria">
-              <option value="todas">Todas</option>
-              <option value="ropa">Ropa</option>
-              <option value="electronica">Electrónica</option>
-              <option value="hogar">Hogar</option>
-            </select>
-            <label for="precio-min">Precio mínimo</label>
-            <input id="precio-min" name="precio-min" type="number" min="0">
+            <div class="filter-field">
+              <label for="categoria">Categoría</label>
+              <select id="categoria" name="categoria">
+                <option value="todas">Todas</option>
+                <option value="ropa">Ropa</option>
+                <option value="electronica">Electrónica</option>
+                <option value="hogar">Hogar</option>
+              </select>
+            </div>
+            <div class="filter-field">
+              <label for="precio-min">Precio mínimo</label>
+              <div class="price-input">
+                <span aria-hidden="true">$</span>
+                <input
+                  id="precio-min"
+                  name="precio-min"
+                  type="number"
+                  min="0"
+                  step="1000"
+                  placeholder="0"
+                  aria-describedby="precio-ayuda"
+                >
+              </div>
+              <small id="precio-ayuda">En pesos argentinos</small>
+            </div>
             <button type="submit">Aplicar</button>
           </form>
         </aside>
