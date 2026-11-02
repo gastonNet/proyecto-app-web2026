@@ -1,3 +1,31 @@
+const traerProductsSupabse = async () => {
+  const url = "https://xxxuxvwzjcaxuwxrjomq.supabase.co/rest/v1/products";
+  const options = {
+    method: "GET",
+    headers: {
+      "apikey": "sb_publishable_2TVOIBk4c8yyjaXJtBwmfQ_En_h4_lW",
+      "Authorization": "Bearer sb_publishable_2TVOIBk4c8yyjaXJtBwmfQ_En_h4_lW",
+      "Content-Type": "application/json",
+      }
+    }
+
+    return fetch(url, options)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`No se pudo cargar Products (${response.status})`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Aquí puedes procesar los datos si es necesario
+        return data;
+      })
+      .catch((error) => {
+        console.error("Error al cargar la solicitud de Supabase:", error);
+        throw error;
+      })
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
   const productList = document.getElementById("product-list");
   const filterForm = document.querySelector("#filters form");
@@ -7,13 +35,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("products.json");
-
-    if (!response.ok) {
-      throw new Error(`No se pudo cargar products.json (${response.status})`);
-    }
-
-    const products = await response.json();
+    const products = await traerProductsSupabse();
+    
     const resultsMessage = document.createElement("p");
     resultsMessage.setAttribute("role", "status");
     resultsMessage.setAttribute("aria-live", "polite");
@@ -25,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       productsToRender.forEach((product) => {
         const item = document.createElement("li");
         const article = document.createElement("article");
-        const titleId = `producto-${product.id}-titulo`;
+        const titleId = `producto-${product.idName}-titulo`;
         const figure = document.createElement("figure");
         const image = document.createElement("img");
         const title = document.createElement("h3");
