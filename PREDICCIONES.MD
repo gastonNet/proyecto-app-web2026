@@ -24,3 +24,5 @@ entender y explicar.
 11. Y arregle en la parte final de la pagina copiando de Mercadolibre la parte de "beneficios y legales" para que quede un poco mas profesional.
 
 12. Agregar productos dinamicamente con Javascript. 
+
+13. Se agrega base de datos en Supabase a mano y con ayuda de correcion con la IA 
