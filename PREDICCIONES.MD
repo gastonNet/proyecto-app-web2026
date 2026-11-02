@@ -26,3 +26,5 @@ entender y explicar.
 12. Agregar productos dinamicamente con Javascript. 
 
 13. Se agrega base de datos en Supabase a mano y con ayuda de correcion con la IA 
+
+14. Se agrega la pagina de producto dinamico. 
