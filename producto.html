@@ -22,24 +22,32 @@
   </header>
 
   <main>
-    <article aria-labelledby="producto-titulo">
+    <p id="product-status" role="status" aria-live="polite">
+      Cargando producto...
+    </p>
+
+    <article id="product-details" aria-labelledby="producto-titulo" hidden>
       <header>
-        <p><a href="index.html">Inicio</a> / <a href="index.html">Productos</a> / Auriculares Bluetooth</p>
+        <p>
+          <a href="index.html">Inicio</a> /
+          <a href="index.html#products">Productos</a> /
+          <span id="producto-breadcrumb"></span>
+        </p>
       </header>
 
       <section aria-label="Imagen y detalles del producto">
         <figure>
-          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=80" alt="Auriculares Bluetooth negros sobre fondo claro" width="600" height="500">
+          <img id="producto-imagen" src="" alt="" width="600" height="500">
         </figure>
 
         <div>
-          <p>Electrónica</p>
-          <h1 id="producto-titulo">Auriculares Bluetooth</h1>
-          <p><strong>Precio: $59.990</strong></p>
-          <p>Calificación: ★★★★★ (4.8/5)</p>
+          <p id="producto-categoria"></p>
+          <h1 id="producto-titulo"></h1>
+          <p><strong id="producto-precio"></strong></p>
 
           <form aria-label="Agregar producto al carrito">
             <label for="cantidad">Cantidad</label>
+            <input id="producto-id" name="id" type="hidden">
             <input id="cantidad" name="cantidad" type="number" min="1" value="1">
             <button type="submit">Agregar al carrito</button>
           </form>
@@ -48,35 +56,14 @@
 
       <section aria-labelledby="descripcion-titulo">
         <h2 id="descripcion-titulo">Descripción</h2>
-        <p>
-          Disfruta de un sonido claro y envolvente con estos auriculares Bluetooth diseñados para tu día a día.
-          Ofrecen batería de larga duración, conexión inalámbrica rápida y un ajuste cómodo para largas sesiones de música,
-          trabajo o llamadas.
-        </p>
-        <ul>
-          <li>Conexión Bluetooth 5.0</li>
-          <li>Hasta 20 horas de reproducción</li>
-          <li>Micrófono integrado</li>
-          <li>Diseño ligero y plegable</li>
-        </ul>
+        <p id="producto-descripcion"></p>
       </section>
     </article>
-
-    <aside id="carrito" aria-labelledby="carrito-titulo">
-      <h2 id="carrito-titulo">Carrito de compras</h2>
-      <ul>
-        <li>
-          <strong>Auriculares Bluetooth</strong>
-          <span>1 x $59.990</span>
-        </li>
-      </ul>
-      <p><strong>Total: $59.990</strong></p>
-      <button type="button">Finalizar compra</button>
-    </aside>
   </main>
 
   <footer>
     <p>&copy; 2026 MiEcommerce</p>
   </footer>
+  <script src="products.js"></script>
 </body>
 </html>
