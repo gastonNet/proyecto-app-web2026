@@ -914,6 +914,56 @@ footer small {
   resize: vertical;
 }
 
+.admin-checkbox-field {
+  display: flex;
+  align-items: center;
+  align-self: end;
+  gap: 10px;
+  min-height: 42px;
+}
+
+.admin-checkbox-field input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  accent-color: var(--blue-500);
+}
+
+.admin-checkbox-field label {
+  cursor: pointer;
+}
+
+.admin-image-preview {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--blue-050);
+}
+
+.admin-image-preview[hidden],
+.admin-image-preview img[hidden] {
+  display: none;
+}
+
+.admin-image-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  background: var(--white);
+}
+
+.admin-image-preview figcaption {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
 .admin-form-actions {
   display: flex;
   flex-wrap: wrap;
