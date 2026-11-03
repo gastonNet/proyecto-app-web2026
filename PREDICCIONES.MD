@@ -28,3 +28,5 @@ entender y explicar.
 13. Se agrega base de datos en Supabase a mano y con ayuda de correcion con la IA 
 
 14. Se agrega la pagina de producto dinamico. 
+
+15. Pido a la ia que el panel del admin refleje los productos en Supabase y tambien poder hacer un fetch para agregar o modificar los productos.

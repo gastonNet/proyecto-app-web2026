@@ -31,52 +31,71 @@
       <header class="admin-section-heading">
         <div>
           <h2 id="product-form-heading">Datos del producto</h2>
-          <p>Producto de ejemplo: Auriculares Bluetooth</p>
+          <p id="product-form-mode">Completa los datos para crear un producto.</p>
         </div>
-        <button type="button" class="admin-secondary-button">Nuevo producto</button>
+        <button
+          id="new-product-button"
+          type="button"
+          class="admin-secondary-button"
+          aria-controls="product-form"
+          aria-expanded="false"
+        >Nuevo producto</button>
       </header>
 
-      <div class="admin-form">
-        <div class="admin-field">
-          <label for="product-name">Nombre</label>
-          <input id="product-name" name="product-name" type="text" value="Auriculares Bluetooth">
+      <form id="product-form" hidden>
+        <div class="admin-form">
+          <div class="admin-field">
+            <label for="product-name">Nombre</label>
+            <input id="product-name" name="name" type="text" required>
+          </div>
+          <div class="admin-field">
+            <label for="product-category">Categor&iacute;a</label>
+            <select id="product-category" name="categoria" required>
+              <option value="electronica">Electr&oacute;nica</option>
+              <option value="ropa">Ropa</option>
+              <option value="hogar">Hogar</option>
+            </select>
+          </div>
+          <div class="admin-field">
+            <label for="product-price">Precio</label>
+            <input id="product-price" name="price" type="number" min="0" step="0.01" required>
+          </div>
+          <div class="admin-field">
+            <label for="product-image">URL de imagen</label>
+            <input id="product-image" name="image" type="url" required>
+            <figure id="product-image-preview" class="admin-image-preview" hidden>
+              <img id="product-image-preview-img" alt="" hidden>
+              <figcaption id="product-image-preview-status" role="status" aria-live="polite"></figcaption>
+            </figure>
+          </div>
+          <div class="admin-field">
+            <label for="product-image-alt">Texto alternativo de imagen</label>
+            <input id="product-image-alt" name="imageAlt" type="text" required>
+          </div>
+          <div class="admin-field admin-field-wide">
+            <label for="product-description">Descripci&oacute;n</label>
+            <textarea id="product-description" name="description" rows="3" required></textarea>
+          </div>
+          <div class="admin-field admin-checkbox-field">
+            <input id="product-new" name="nuevo" type="checkbox">
+            <label for="product-new">Marcar como nuevo</label>
+          </div>
         </div>
-        <div class="admin-field">
-          <label for="product-category">Categor&iacute;a</label>
-          <select id="product-category" name="product-category">
-            <option value="electronica" selected>Electr&oacute;nica</option>
-            <option value="ropa">Ropa</option>
-            <option value="hogar">Hogar</option>
-          </select>
-        </div>
-        <div class="admin-field">
-          <label for="product-price">Precio</label>
-          <input id="product-price" name="product-price" type="number" min="0" value="59990">
-        </div>
-        <div class="admin-field">
-          <label for="product-stock">Estado</label>
-          <select id="product-stock" name="product-stock">
-            <option value="active" selected>Publicado</option>
-            <option value="draft">Borrador</option>
-          </select>
-        </div>
-        <div class="admin-field admin-field-wide">
-          <label for="product-description">Descripci&oacute;n</label>
-          <textarea id="product-description" name="product-description" rows="3">Sonido claro, conexi&oacute;n inal&aacute;mbrica y gran comodidad para uso diario.</textarea>
-        </div>
-      </div>
 
-      <div class="admin-form-actions">
-        <button type="button">Guardar cambios</button>
-        <button type="button" class="admin-secondary-button">Cancelar</button>
-      </div>
+        <p id="admin-message" role="status" aria-live="polite"></p>
+
+        <div class="admin-form-actions">
+          <button id="save-product-button" type="submit">Crear producto</button>
+          <button id="cancel-edit-button" type="button" class="admin-secondary-button" hidden>Cancelar</button>
+        </div>
+      </form>
     </section>
 
     <section class="admin-panel" aria-labelledby="product-list-heading">
       <header class="admin-section-heading">
         <div>
           <h2 id="product-list-heading">Productos</h2>
-          <p>4 productos en el cat&aacute;logo</p>
+          <p id="product-count" role="status">Cargando productos...</p>
         </div>
       </header>
 
@@ -87,40 +106,11 @@
               <th scope="col">Producto</th>
               <th scope="col">Categor&iacute;a</th>
               <th scope="col">Precio</th>
-              <th scope="col">Estado</th>
+              <th scope="col">Novedad</th>
               <th scope="col"><span class="visually-hidden">Acciones</span></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Auriculares Bluetooth</th>
-              <td>Electr&oacute;nica</td>
-              <td>$59.990</td>
-              <td><span class="admin-status">Publicado</span></td>
-              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
-            </tr>
-            <tr>
-              <th scope="row">Smartwatch Pro</th>
-              <td>Electr&oacute;nica</td>
-              <td>$89.990</td>
-              <td><span class="admin-status">Publicado</span></td>
-              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
-            </tr>
-            <tr>
-              <th scope="row">C&aacute;mara Compacta</th>
-              <td>Electr&oacute;nica</td>
-              <td>$129.990</td>
-              <td><span class="admin-status">Publicado</span></td>
-              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
-            </tr>
-            <tr>
-              <th scope="row">Zapatillas Urbanas</th>
-              <td>Ropa</td>
-              <td>$74.990</td>
-              <td><span class="admin-status">Publicado</span></td>
-              <td class="admin-row-actions"><button type="button" class="admin-text-button">Editar</button><button type="button" class="admin-text-button admin-delete-button">Eliminar</button></td>
-            </tr>
-          </tbody>
+          <tbody id="admin-product-list"></tbody>
         </table>
       </div>
     </section>
@@ -129,5 +119,6 @@
   <footer>
     <p>&copy; <span id="year">2026</span> MiEcommerce - Proyecto Universidad</p>
   </footer>
+  <script src="admin.js"></script>
 </body>
 </html>
