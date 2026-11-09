@@ -11,6 +11,7 @@
   --surface: #ffffff;
   --line: #d9e3f1;
   --success: #168a5b;
+  --danger: #b42318;
   --white: #ffffff;
 
   /* Espaciado */
@@ -675,6 +676,34 @@ main > article > section[aria-labelledby="descripcion-titulo"] li::marker {
   color: var(--blue-900);
 }
 
+.cart-item-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.cart-item-controls button {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--blue-700);
+}
+
+.cart-item-controls button:hover {
+  background: var(--blue-100);
+  color: var(--blue-900);
+}
+
+.cart-item-controls span {
+  min-width: 24px;
+  text-align: center;
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .empty-cart {
   padding: 18px 0;
   color: var(--muted);
@@ -751,6 +780,10 @@ main > article > section[aria-labelledby="descripcion-titulo"] li::marker {
   margin: 12px 0 0;
   color: var(--success);
   font-size: 0.9rem;
+}
+
+.form-message.is-error {
+  color: var(--danger);
 }
 
 /* =====================================================

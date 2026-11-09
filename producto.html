@@ -12,10 +12,10 @@
       <a href="index.html" class="brand" aria-label="Inicio"><strong>MiEcommerce</strong></a>
       <div class="nav-actions">
         <a href="admin.html">Iniciar sesión</a>
-        <a href="carrito.html" class="cart-link" aria-label="Carrito, 1 producto">
+        <a href="carrito.html" class="cart-link" aria-label="Carrito, 0 productos">
           <span class="cart-icon" aria-hidden="true">&#128722;</span>
           <span class="visually-hidden">Carrito</span>
-          <span class="cart-count">1</span>
+          <span class="cart-count">0</span>
         </a>
       </div>
     </nav>
@@ -45,11 +45,13 @@
           <h1 id="producto-titulo"></h1>
           <p><strong id="producto-precio"></strong></p>
 
-          <form aria-label="Agregar producto al carrito">
+          <form id="add-to-cart-form" aria-label="Agregar producto al carrito">
             <label for="cantidad">Cantidad</label>
             <input id="producto-id" name="id" type="hidden">
+            <input id="producto-precio-valor" name="precio" type="hidden">
             <input id="cantidad" name="cantidad" type="number" min="1" value="1">
             <button type="submit">Agregar al carrito</button>
+            <p id="add-to-cart-message" class="form-message" role="status"></p>
           </form>
         </div>
       </section>
@@ -65,5 +67,6 @@
     <p>&copy; 2026 MiEcommerce</p>
   </footer>
   <script src="products.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>
