@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proyecto Ecommerce - Esqueleto</title>
+  <title>MiEcommerce - Tienda online</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,187 +22,159 @@
   </header>
 
   <main>
-      <!-- Sección principal / Hero -->
-      <section id="hero">
-        <h1>Bienvenido a MiEcommerce</h1>
-        <p>Este es el esqueleto principal del proyecto. Reemplaza este contenido con tu hero, banner o slider.</p>
-      </section>
+    <!-- Sección principal / Hero -->
+    <section id="hero">
+      <h1>Bienvenido a MiEcommerce</h1>
+      <p>Este es el esqueleto principal del proyecto. Reemplaza este contenido con tu hero, banner o slider.</p>
+    </section>
 
-      <!-- Sección de artículos destacados -->
-      <section id="featured" class="featured" aria-labelledby="featured-heading">
-        <h2 id="featured-heading">Artículos destacados</h2>
-        <p>Seleccionados especialmente para mostrar en la página principal.</p>
-        <div class="featured-viewport">
-          <ul id="featured-product-list" class="featured-track" aria-live="polite"></ul>
-        </div>
-      </section>
+    <!-- Sección de artículos destacados -->
+    <section id="featured" class="featured" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Artículos destacados</h2>
+      <p>Seleccionados especialmente para mostrar en la página principal.</p>
+      <div class="featured-viewport">
+        <ul id="featured-product-list" class="featured-track" aria-live="polite"></ul>
+      </div>
+    </section>
 
-      <!-- Layout con filtros + listado de productos -->
-      <section role="region" aria-label="Listado de productos y filtros">
-        <!-- Sección de filtros -->
-        <aside id="filters" aria-labelledby="filters-heading">
-          <h3 id="filters-heading">Filtros</h3>
-          <form>
-            <!-- Ejemplos de filtros -->
-            <label><input type="checkbox" name="nuevo"> Nuevo</label>
-            <div class="filter-field">
-              <label for="categoria">Categoría</label>
-              <select id="categoria" name="categoria">
-                <option value="todas">Todas</option>
-                <option value="ropa">Ropa</option>
-                <option value="electronica">Electrónica</option>
-                <option value="hogar">Hogar</option>
-              </select>
+    <!-- Layout con filtros + listado de productos -->
+    <section role="region" aria-label="Listado de productos y filtros">
+      <!-- Sección de filtros -->
+      <aside id="filters" aria-labelledby="filters-heading">
+        <h2 id="filters-heading">Filtros</h2>
+        <form>
+          <!-- Ejemplos de filtros -->
+          <label><input type="checkbox" name="nuevo"> Nuevo</label>
+          <div class="filter-field">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria">
+              <option value="todas">Todas</option>
+              <option value="ropa">Ropa</option>
+              <option value="electronica">Electrónica</option>
+              <option value="hogar">Hogar</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="precio-min">Precio mínimo</label>
+            <div class="price-input">
+              <span aria-hidden="true">$</span>
+              <input
+                id="precio-min"
+                name="precio-min"
+                type="number"
+                min="0"
+                step="1000"
+                placeholder="0"
+                aria-describedby="precio-ayuda"
+              >
             </div>
-            <div class="filter-field">
-              <label for="precio-min">Precio mínimo</label>
-              <div class="price-input">
-                <span aria-hidden="true">$</span>
-                <input
-                  id="precio-min"
-                  name="precio-min"
-                  type="number"
-                  min="0"
-                  step="1000"
-                  placeholder="0"
-                  aria-describedby="precio-ayuda"
-                >
-              </div>
-              <small id="precio-ayuda">En pesos argentinos</small>
-            </div>
-            <button type="submit">Aplicar</button>
-          </form>
-        </aside>
+            <small id="precio-ayuda">En pesos argentinos</small>
+          </div>
+          <button type="submit">Aplicar</button>
+        </form>
+      </aside>
 
-        <!-- Sección de Productos -->
-        <section id="products" aria-labelledby="products-heading">
-          <h2 id="products-heading">Productos</h2>
-          <p>Explora nuestra selección de artículos y accede a cada detalle con un solo clic.</p>
+      <!-- Sección de productos -->
+      <section id="products" aria-labelledby="products-heading">
+        <h2 id="products-heading">Productos</h2>
+        <p>Explora nuestra selección de artículos y accede a cada detalle con un solo clic.</p>
 
-          <ul id="product-list"></ul>
-        </section>
-        <!-- Fin Seccion Productos -->
+        <ul id="product-list"></ul>
+      </section>
+    </section>
+    <!-- Fin listado de productos y filtros -->
 
-        
-        <!-- Seccion de Beneficios -->
-     <section class="benefits" aria-labelledby="benefits-title">
-
-    <h1 id="benefits-title" class="sr-only">
+    <!-- Sección de beneficios -->
+    <section class="benefits" aria-labelledby="benefits-title">
+      <h2 id="benefits-title" class="sr-only">
         Beneficios y protección de compra
-    </h1>
+      </h2>
 
-    <div class="benefits__container">
-
+      <div class="benefits__container">
         <!-- Beneficio 1 -->
         <article class="benefit">
-            <div class="benefit__icon" aria-hidden="true">
-                
-            </div>
+          <div class="benefit__icon" aria-hidden="true"></div>
 
-            <h2 class="benefit__title">
-                Elegí cómo pagar
-            </h2>
+          <h3 class="benefit__title">
+            Elegí cómo pagar
+          </h3>
 
-            <p class="benefit__description">
-                Podés pagar con tarjeta, débito, efectivo
-                o con cuotas sin tarjeta.
-            </p>
+          <p class="benefit__description">
+            Podés pagar con tarjeta, débito, efectivo
+            o con cuotas sin tarjeta.
+          </p>
 
-            <a href="#" class="benefit__link">
-                Cómo pagar tus compras
-            </a>
+          <a href="#" class="benefit__link">
+            Cómo pagar tus compras
+          </a>
         </article>
-
 
         <!-- Separador -->
         <div class="benefits__divider" aria-hidden="true"></div>
-
 
         <!-- Beneficio 2 -->
         <article class="benefit">
-            <div class="benefit__icon" aria-hidden="true">
-                
-            </div>
+          <div class="benefit__icon" aria-hidden="true"></div>
 
-            <h2 class="benefit__title">
-                Envío gratis desde $ 33.000
-            </h2>
+          <h3 class="benefit__title">
+            Envío gratis desde $ 33.000
+          </h3>
 
-            <p class="benefit__description">
-                Solo por estar registrado en MiEcommerce,
-                tenés envíos gratis en miles de productos.
-            </p>
+          <p class="benefit__description">
+            Solo por estar registrado en MiEcommerce,
+            tenés envíos gratis en miles de productos.
+          </p>
         </article>
-
 
         <!-- Separador -->
         <div class="benefits__divider" aria-hidden="true"></div>
 
-
         <!-- Beneficio 3 -->
         <article class="benefit">
+          <div class="benefit__icon" aria-hidden="true"></div>
 
-            <div class="benefit__icon" aria-hidden="true">
+          <h3 class="benefit__title">
+            Seguridad, de principio a fin
+          </h3>
 
-            </div>
+          <p class="benefit__description">
+            ¿No te gusta? ¡Devolvelo! En MiEcommerce,
+            no hay nada que no puedas hacer, porque estás
+            siempre protegido.
+          </p>
 
-            <h2 class="benefit__title">
-                Seguridad, de principio a fin
-            </h2>
-
-            <p class="benefit__description">
-                ¿No te gusta? ¡Devolvelo! En MiEcommerce,
-                no hay nada que no puedas hacer, porque estás
-                siempre protegido.
-            </p>
-
-            <a href="#" class="benefit__link">
-                Cómo te protegemos
-            </a>
-
+          <a href="#" class="benefit__link">
+            Cómo te protegemos
+          </a>
         </article>
+      </div>
+    </section>
 
-    </div>
+    <!-- Información legal -->
+    <section class="legal" aria-labelledby="legal-title">
+      <h2 id="legal-title" class="sr-only">
+        Información legal
+      </h2>
 
-</section>
-
-
-<!-- ==========================
-     INFORMACIÓN LEGAL
-========================== -->
-
-<section class="legal">
-
-    <div class="legal__container">
-
+      <div class="legal__container">
         <a href="#" class="legal-card legal-card--link">
-
-            <span>
-                Botón de arrepentimiento y baja de servicio
-            </span>
-
+          <span>
+            Botón de arrepentimiento y baja de servicio
+          </span>
         </a>
 
-
         <article class="legal-card">
+          <h3 class="legal-card__title">
+            Conoce las normas que aplican cuando compras
+          </h3>
 
-            <h2 class="legal-card__title">
-                Conoce las normas que aplican cuando compras
-            </h2>
-
-            <a href="#" class="legal-card__link">
-                Ver contratos de adhesión -
-                Ley N.° 24.240 de Defensa del Consumidor
-            </a>
-
+          <a href="#" class="legal-card__link">
+            Ver contratos de adhesión -
+            Ley N.° 24.240 de Defensa del Consumidor
+          </a>
         </article>
-
-    </div>
-
-</section>
-        <!-- Fin Beneficios -->
-      </section>
-
+      </div>
+    </section>
   </main>
 
   <footer>
