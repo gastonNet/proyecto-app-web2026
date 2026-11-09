@@ -196,6 +196,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       productDetails.querySelector("#producto-descripcion").textContent =
         product.description || "Sin descripción disponible.";
       productDetails.querySelector("#producto-id").value = product.id;
+      productDetails.querySelector("#producto-precio-valor").value =
+        product.price;
       document.getElementById("producto-breadcrumb").textContent = product.name;
       document.title = `${product.name} - MiEcommerce`;
 

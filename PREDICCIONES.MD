@@ -30,3 +30,5 @@ entender y explicar.
 14. Se agrega la pagina de producto dinamico. 
 
 15. Pido a la ia que el panel del admin refleje los productos en Supabase y tambien poder hacer un fetch para agregar o modificar los productos.
+
+16. Se le pide a la ia crear cart.js y con localStorage para manejar el carrito en la navegacion por la pagina.
