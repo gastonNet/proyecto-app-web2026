@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MiEcommerce - Tienda online</title>
+  <title>TechStore Online - Tienda online</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <nav aria-label="Navegación principal">
-      <a href="index.html" class="brand" aria-label="Inicio"><strong>MiEcommerce</strong></a>
+      <a href="index.html" class="brand" aria-label="TechStore Online - Inicio"><strong>TechStore<span class="brand__suffix"> Online</span></strong></a>
       <div class="nav-actions">
         <a href="admin.html">Iniciar sesión</a>
         <a href="carrito.html" class="cart-link" aria-label="Carrito, 0 productos">
@@ -22,10 +22,22 @@
   </header>
 
   <main>
-    <!-- Sección principal / Hero -->
-    <section id="hero">
-      <h1>Bienvenido a MiEcommerce</h1>
-      <p>Este es el esqueleto principal del proyecto. Reemplaza este contenido con tu hero, banner o slider.</p>
+    <!-- Banner principal: la imagen completa es un enlace al catálogo -->
+    <section id="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="sr-only">TechStore Online</h1>
+
+      <a class="hero__link" href="#products" aria-label="Ver productos de TechStore Online">
+        <picture>
+          <source srcset="img/banner.webp" type="image/webp">
+          <img
+            class="hero__image"
+            src="img/banner.webp"
+            width="1920"
+            height="819"
+            alt="¡Bienvenido a TechStore! Tu tienda online de tecnología, gadgets y más."
+          >
+        </picture>
+      </a>
     </section>
 
     <!-- Sección de artículos destacados -->
@@ -121,7 +133,7 @@
           </h3>
 
           <p class="benefit__description">
-            Solo por estar registrado en MiEcommerce,
+            Solo por estar registrado en TechStore Online,
             tenés envíos gratis en miles de productos.
           </p>
         </article>
@@ -138,7 +150,7 @@
           </h3>
 
           <p class="benefit__description">
-            ¿No te gusta? ¡Devolvelo! En MiEcommerce,
+            ¿No te gusta? ¡Devolvelo! En TechStore Online,
             no hay nada que no puedas hacer, porque estás
             siempre protegido.
           </p>
@@ -178,7 +190,7 @@
   </main>
 
   <footer>
-    <p>&copy; <span id="year">2026</span> MiEcommerce — Proyecto Universidad</p>
+    <p>&copy; <span id="year">2026</span> TechStore Online — Proyecto Universidad</p>
     <p><small>Enlace a políticas, contacto o información adicional.</small></p>
   </footer>
 

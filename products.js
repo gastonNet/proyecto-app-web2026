@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       productDetails.querySelector("#producto-precio-valor").value =
         product.price;
       document.getElementById("producto-breadcrumb").textContent = product.name;
-      document.title = `${product.name} - MiEcommerce`;
+      document.title = `${product.name} - TechStore Online`;
 
       statusMessage.hidden = true;
       productDetails.hidden = false;
