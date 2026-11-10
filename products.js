@@ -1,6 +1,5 @@
-const SUPABASE_PRODUCTS_URL =
-  "https://xxxuxvwzjcaxuwxrjomq.supabase.co/rest/v1/products";
-const SUPABASE_PUBLIC_KEY = "sb_publishable_2TVOIBk4c8yyjaXJtBwmfQ_En_h4_lW";
+/* La URL y la clave pública viven en supabase-config.js,
+   que se carga antes que este archivo. */
 
 const traerProductsSupabse = async (productId) => {
   const url = new URL(SUPABASE_PRODUCTS_URL);
@@ -12,8 +11,8 @@ const traerProductsSupabse = async (productId) => {
   const response = await fetch(url, {
     method: "GET",
     headers: {
-      apikey: SUPABASE_PUBLIC_KEY,
-      Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
+      apikey: SUPABASE_CONFIG.publishableKey,
+      Authorization: `Bearer ${SUPABASE_CONFIG.publishableKey}`,
       "Content-Type": "application/json",
     },
   });

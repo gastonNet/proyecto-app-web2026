@@ -1,13 +1,12 @@
-const ADMIN_SUPABASE_URL =
-  "https://xxxuxvwzjcaxuwxrjomq.supabase.co/rest/v1/products";
-const ADMIN_SUPABASE_KEY = "sb_publishable_2TVOIBk4c8yyjaXJtBwmfQ_En_h4_lW";
+/* La URL y la clave pública viven en supabase-config.js,
+   que se carga antes que este archivo. */
 
 const adminRequest = async (url, options = {}) => {
   const response = await fetch(url, {
     ...options,
     headers: {
-      apikey: ADMIN_SUPABASE_KEY,
-      Authorization: `Bearer ${ADMIN_SUPABASE_KEY}`,
+      apikey: SUPABASE_CONFIG.publishableKey,
+      Authorization: `Bearer ${SUPABASE_CONFIG.publishableKey}`,
       ...(options.body ? { "Content-Type": "application/json" } : {}),
       ...options.headers,
     },
@@ -176,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadProducts = async () => {
     productCount.textContent = "Cargando productos...";
-    const url = new URL(ADMIN_SUPABASE_URL);
+    const url = new URL(SUPABASE_PRODUCTS_URL);
     url.searchParams.set(
       "select",
       "id,idName,name,description,price,categoria,nuevo,image,imageAlt"
@@ -244,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     button.disabled = true;
     try {
-      const url = new URL(ADMIN_SUPABASE_URL);
+      const url = new URL(SUPABASE_PRODUCTS_URL);
       url.searchParams.set("id", `eq.${productId}`);
       await adminRequest(url, { method: "DELETE" });
       if (form.dataset.editingId === productId) {
@@ -306,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
       detailsUrl: "producto.html",
     };
     const editingId = form.dataset.editingId;
-    const requestUrl = new URL(ADMIN_SUPABASE_URL);
+    const requestUrl = new URL(SUPABASE_PRODUCTS_URL);
     const requestOptions = {
       method: editingId ? "PATCH" : "POST",
       body: JSON.stringify(product),

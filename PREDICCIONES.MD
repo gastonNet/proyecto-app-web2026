@@ -32,3 +32,7 @@ entender y explicar.
 15. Pido a la ia que el panel del admin refleje los productos en Supabase y tambien poder hacer un fetch para agregar o modificar los productos.
 
 16. Se le pide a la ia crear cart.js y con localStorage para manejar el carrito en la navegacion por la pagina.
+
+17. Con la ia se armo supabase-config.js para separar lo que se comparte entre admin y productos a un archivo compartido
+
+18. Se arregla el maquetado de beneficios/legales y los titulos del home
