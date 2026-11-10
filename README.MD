@@ -1,4 +1,4 @@
-# MiEcommerce — Proyecto E-commerce
+# TechStore Online — Proyecto E-commerce
 
 Tienda online **estática** (sin frameworks ni herramientas de build) con catálogo
 dinámico, ficha de producto, carrito con persistencia y panel de administración
@@ -28,7 +28,7 @@ se sirve tal cual.
 
 | Página | Archivo | Descripción |
 | --- | --- | --- |
-| Inicio | `index.html` | Hero, carrusel de destacados, filtros (categoría / precio mínimo / novedades), listado de productos, beneficios y aviso legal |
+| Inicio | `index.html` | Banner principal, carrusel de destacados, filtros (categoría / precio mínimo / novedades), listado de productos, beneficios y aviso legal |
 | Producto | `producto.html?id=<id>` | Ficha dinámica: imagen, categoría, precio, descripción y alta al carrito |
 | Carrito | `carrito.html` | Ítems con cantidad (+ / −), eliminar, subtotal/total y formulario de pago simulado |
 | Administración | `admin.html` | ABM de productos: crear, editar, eliminar y listar (con vista previa de la imagen) |
@@ -43,6 +43,9 @@ proyecto-app-web2026/
 ├── producto.html           # Detalle de producto (?id=...)
 ├── carrito.html            # Carrito y checkout
 ├── admin.html              # Panel de administración
+├── img/
+│   ├── banner.webp         # Banner principal (WebP comprimido, 319 KB)
+│   └── banner.png          # Respaldo para navegadores sin WebP (PNG original)
 ├── styles.css              # Estilos de todas las páginas
 ├── supabase-config.js      # URL + clave pública de Supabase (compartido)
 ├── products.js             # Carga de productos (index y ficha) + filtros
@@ -65,6 +68,26 @@ proyecto-app-web2026/
 ```
 
 En `admin.html` el orden es `supabase-config.js` → `admin.js`.
+
+### Imágenes
+
+- `img/banner.webp` → banner principal del home (`#hero`), **1920 × 819 px**.
+- Se generó comprimiendo el PNG original: **2.26 MB → 319 KB (−86 %)**
+  con calidad 88 y `smartSubsample` (medido con PSNR: 36.6 dB, sin
+  artefactos visibles en el texto).
+- `index.html` usa `<picture>`: los navegadores modernos cargan el WebP y
+  `img/banner.png` queda como respaldo para navegadores sin soporte.
+- Toda la imagen es un enlace al catálogo (`#products`), así el botón
+  "Explorá el catálogo" que viene pintado en la imagen también funciona.
+- El `h1` de la página está en `.sr-only`: existe para los lectores de
+  pantalla y para el posicionamiento, pero no se ve porque el título ya está
+  dentro de la imagen.
+- El `alt` de la imagen describe el banner por si no carga.
+- Si falta el archivo, queda el color de fondo del `#hero` con el texto
+  alternativo: **no se rompe nada**.
+- El PNG solo lo descargan navegadores muy viejos: si querés aligerar el
+  repo, podés borrarlo y dejar únicamente el WebP (avisame y actualizo el
+  `<picture>`).
 
 ---
 
