@@ -38,3 +38,4 @@ entender y explicar.
 18. Se arregla el maquetado de beneficios/legales y los titulos del home
 
 19. Se agrega un banner, nombre a la tienda y borra el carrito en la pagina de admin, se le pide a la ia optimizar la imagen.png a webp.
+.....
