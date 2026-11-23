@@ -33,7 +33,7 @@
   --radius-pill: 999px;
 
   /* Layout */
-  --container: min(100% - 28px, 1180px);
+  --container: min(100% - 28px, 1388px);
   --shadow: 0 10px 30px rgba(25, 68, 126, 0.1);
 }
 
