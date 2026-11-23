@@ -133,11 +133,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       renderProducts(products);
 
       if (filterForm) {
-        filterForm.addEventListener("submit", (event) => {
-          event.preventDefault();
-
+        // Lee los tres filtros y pinta solo los productos que coinciden.
+        const applyFilters = () => {
           const category = filterForm.elements.namedItem("categoria").value;
-          const minPriceValue = filterForm.elements.namedItem("precio-min").value;
+          const minPriceValue =
+            filterForm.elements.namedItem("precio-min").value;
           const minPrice = minPriceValue === "" ? null : Number(minPriceValue);
           const onlyNew = filterForm.elements.namedItem("nuevo").checked;
 
@@ -152,6 +152,24 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
 
           renderProducts(filteredProducts);
+        };
+
+        // "input" cubre el checkbox, el select y el teclado del precio.
+        filterForm.addEventListener("input", applyFilters);
+        // "change" como respaldo: dispara al salir del campo o con flechas.
+        filterForm.addEventListener("change", applyFilters);
+
+        // El Enter dentro del campo de precio no debe recargar la página.
+        filterForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          applyFilters();
+        });
+
+        // Botón "Limpiar filtros": vuelve todo al estado inicial.
+        const clearButton = document.getElementById("clear-filters-button");
+        clearButton?.addEventListener("click", () => {
+          filterForm.reset();
+          applyFilters();
         });
       }
     } catch (error) {
