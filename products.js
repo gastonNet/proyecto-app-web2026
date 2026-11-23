@@ -40,22 +40,37 @@ document.addEventListener("DOMContentLoaded", async () => {
           const image = document.createElement("img");
           const imageLink = document.createElement("a");
           const title = document.createElement("h3");
-          const titleLink = document.createElement("a");
           const productUrl = `producto.html?id=${encodeURIComponent(product.id)}`;
 
           article.setAttribute("aria-label", product.name);
+
           image.src = product.image;
           image.alt = product.imageAlt || product.name;
           image.width = 600;
           image.height = 500;
+
+          // Overlay con nombre + precio que aparece al hacer hover
+          const overlay = document.createElement("span");
+          const overlayName = document.createElement("span");
+          const overlayPrice = document.createElement("span");
+          overlay.className = "featured-card__overlay";
+          overlayName.className = "featured-card__name";
+          overlayName.textContent = product.name;
+          overlayPrice.className = "featured-card__price";
+          overlayPrice.textContent =
+            `$${Number(product.price).toLocaleString("es-AR")}`;
+          overlay.append(overlayName, overlayPrice);
+
+          // La imagen y el overlay van dentro del enlace: todo es clicable
+          imageLink.className = "featured-card";
           imageLink.href = productUrl;
           imageLink.setAttribute("aria-label", `Ver ${product.name}`);
-          imageLink.append(image);
+          imageLink.append(image, overlay);
           figure.append(imageLink);
 
-          titleLink.href = productUrl;
-          titleLink.textContent = product.name;
-          title.append(titleLink);
+          // Título accesible (oculto visualmente, el nombre vive en el overlay)
+          title.className = "sr-only";
+          title.textContent = product.name;
 
           article.append(figure, title);
           item.append(article);

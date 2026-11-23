@@ -101,6 +101,15 @@ h3 {
    NAVEGACIÓN
    ===================================================== */
 
+/* Cabecera sticky con el azul de marca: todas las páginas */
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--blue-500);
+  box-shadow: 0 2px 12px rgba(9, 43, 87, 0.2);
+}
+
 /* El nav del home queda fijo; el header no, para que el hero scrollee. */
 body > header.home-header {
   position: static;
@@ -276,6 +285,7 @@ a:focus-visible {
   display: flex;
   flex-wrap: nowrap;
   width: 300%;
+  gap: 0;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -289,33 +299,72 @@ a:focus-visible {
 }
 
 @keyframes slide-products {
-  0%,
-  28% {
-    transform: translateX(0);
-  }
-
-  33%,
-  61% {
-    transform: translateX(-33.333%);
-  }
-
-  66%,
-  94% {
-    transform: translateX(-66.666%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+  0%, 32% { transform: translateX(0); }
+  33%, 65% { transform: translateX(-33.333%); }
+  66%, 98% { transform: translateX(-66.666%); }
+  99%, 100% { transform: translateX(0); }
 }
 
-.featured-viewport:hover .featured-track {
+.featured-viewport:hover .featured-track,
+.featured-viewport:focus-within .featured-track {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .featured-track {
-    animation: none;
+  #featured .featured-track { animation: none; }
+}
+
+/* Tarjeta del destacado: la imagen completa es un enlace
+   y al hacer hover aparece un overlay con nombre y precio. */
+.featured-card {
+  position: relative;
+  display: block;
+}
+
+.featured-card img {
+  transition: filter 0.25s ease;
+}
+
+.featured-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px;
+  text-align: center;
+  background: rgba(9, 43, 87, 0.45);
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.featured-card__name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.featured-card__price {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.featured-card:hover img,
+.featured-card:focus-visible img {
+  filter: brightness(0.5);
+}
+
+.featured-card:hover .featured-card__overlay,
+.featured-card:focus-visible .featured-card__overlay {
+  opacity: 1;
+}
+
+/* En dispositivos táctiles (sin hover) el overlay queda siempre visible */
+@media (hover: none) {
+  .featured-card__overlay {
+    opacity: 1;
   }
 }
 
