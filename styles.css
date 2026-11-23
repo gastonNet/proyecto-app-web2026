@@ -55,6 +55,7 @@ body {
   color: var(--ink);
   font-family: "Segoe UI", Tahoma, sans-serif;
   line-height: 1.6;
+  scroll-padding-top: 80px;
 }
 
 a {
@@ -100,12 +101,33 @@ h3 {
    NAVEGACIÓN
    ===================================================== */
 
-body > header {
-  position: sticky;
+/* El nav del home queda fijo; el header no, para que el hero scrollee. */
+body > header.home-header {
+  position: static;
+  background: none;
+  box-shadow: none;
+  /* Empuja el hero debajo del nav fijo (64 px / 72 px en desktop) */
+  padding-top: 64px;
+}
+
+@media (min-width: 700px) {
+  body > header.home-header {
+    padding-top: 72px;
+  }
+}
+
+/* Nav fijo a ancho completo con el contenido centrado como hoy */
+body > header.home-header > nav {
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  width: auto;
+  margin: 0;
+  /* Mismo centrado que --container: min(100% - 28px, 1180px) */
+  padding-inline: max(14px, calc((100% - 1180px) / 2));
   background: var(--blue-500);
-  box-shadow: 0 2px 12px rgba(9, 43, 87, 0.2);
 }
 
 nav {
@@ -211,37 +233,31 @@ a:focus-visible {
    HERO
    ===================================================== */
 
+/* =====================================================
+   HERO
+   ===================================================== */
+
 #hero {
-  position: relative;
-  margin: 24px 0;
-  border-radius: var(--radius-lg);
-  /* Respaldo por si faltan las imágenes del banner */
+  margin: 0;
+  border-radius: 0;
   background-color: var(--blue-900);
 }
 
 .hero__link {
-  display: block;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-
-.hero__link picture {
-  display: block;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .hero__image {
-  display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
-  transition: transform 0.2s ease;
+  border-radius: 0;
+  max-height: 100vh;
+  object-fit: cover;
+  transition: none;
 }
 
-.hero__link:hover .hero__image {
-  transform: scale(1.01);
-}
-
+/* Accesibilidad: enfoque visible para teclado */
 .hero__link:focus-visible {
   outline: 3px solid var(--blue-500);
   outline-offset: 3px;
@@ -843,9 +859,7 @@ footer small {
     padding: 0;
   }
 
-  #hero {
-    margin: 32px 0;
-  }
+  /* Header del home ya tiene padding-top, no lo repito aquí */
 
   #featured,
   #products,

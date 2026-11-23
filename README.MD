@@ -44,8 +44,7 @@ proyecto-app-web2026/
 ├── carrito.html            # Carrito y checkout
 ├── admin.html              # Panel de administración
 ├── img/
-│   ├── banner.webp         # Banner principal (WebP comprimido, 319 KB)
-│   └── banner.png          # Respaldo para navegadores sin WebP (PNG original)
+│   └── banner.webp         # Banner principal (WebP comprimido, 319 KB)
 ├── styles.css              # Estilos de todas las páginas
 ├── supabase-config.js      # URL + clave pública de Supabase (compartido)
 ├── products.js             # Carga de productos (index y ficha) + filtros
@@ -75,8 +74,7 @@ En `admin.html` el orden es `supabase-config.js` → `admin.js`.
 - Se generó comprimiendo el PNG original: **2.26 MB → 319 KB (−86 %)**
   con calidad 88 y `smartSubsample` (medido con PSNR: 36.6 dB, sin
   artefactos visibles en el texto).
-- `index.html` usa `<picture>`: los navegadores modernos cargan el WebP y
-  `img/banner.png` queda como respaldo para navegadores sin soporte.
+- `index.html` usa directamente `img/banner.webp`. Toda la imagen es un enlace al catálogo (`#products`), así el botón "Explorá el catálogo" que viene pintado en la imagen también funciona.
 - Toda la imagen es un enlace al catálogo (`#products`), así el botón
   "Explorá el catálogo" que viene pintado en la imagen también funciona.
 - El `h1` de la página está en `.sr-only`: existe para los lectores de
