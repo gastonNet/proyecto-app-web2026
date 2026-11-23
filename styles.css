@@ -33,7 +33,7 @@
   --radius-pill: 999px;
 
   /* Layout */
-  --container: min(100% - 28px, 1180px);
+  --container: min(100% - 28px, 1388px);
   --shadow: 0 10px 30px rgba(25, 68, 126, 0.1);
 }
 
@@ -55,6 +55,7 @@ body {
   color: var(--ink);
   font-family: "Segoe UI", Tahoma, sans-serif;
   line-height: 1.6;
+  scroll-padding-top: 80px;
 }
 
 a {
@@ -100,12 +101,42 @@ h3 {
    NAVEGACIÓN
    ===================================================== */
 
+/* Cabecera sticky con el azul de marca: todas las páginas */
 body > header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: var(--blue-500);
   box-shadow: 0 2px 12px rgba(9, 43, 87, 0.2);
+}
+
+/* El nav del home queda fijo; el header no, para que el hero scrollee. */
+body > header.home-header {
+  position: static;
+  background: none;
+  box-shadow: none;
+  /* Empuja el hero debajo del nav fijo (64 px / 72 px en desktop) */
+  padding-top: 64px;
+}
+
+@media (min-width: 700px) {
+  body > header.home-header {
+    padding-top: 72px;
+  }
+}
+
+/* Nav fijo a ancho completo con el contenido centrado como hoy */
+body > header.home-header > nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: auto;
+  margin: 0;
+  /* Mismo centrado que --container: min(100% - 28px, 1180px) */
+  padding-inline: max(14px, calc((100% - 1180px) / 2));
+  background: var(--blue-500);
 }
 
 nav {
@@ -211,37 +242,31 @@ a:focus-visible {
    HERO
    ===================================================== */
 
+/* =====================================================
+   HERO
+   ===================================================== */
+
 #hero {
-  position: relative;
-  margin: 24px 0;
-  border-radius: var(--radius-lg);
-  /* Respaldo por si faltan las imágenes del banner */
+  margin: 0;
+  border-radius: 0;
   background-color: var(--blue-900);
 }
 
 .hero__link {
-  display: block;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-
-.hero__link picture {
-  display: block;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .hero__image {
-  display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
-  transition: transform 0.2s ease;
+  border-radius: 0;
+  max-height: 100vh;
+  object-fit: cover;
+  transition: none;
 }
 
-.hero__link:hover .hero__image {
-  transform: scale(1.01);
-}
-
+/* Accesibilidad: enfoque visible para teclado */
 .hero__link:focus-visible {
   outline: 3px solid var(--blue-500);
   outline-offset: 3px;
@@ -260,6 +285,7 @@ a:focus-visible {
   display: flex;
   flex-wrap: nowrap;
   width: 300%;
+  gap: 0;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -273,33 +299,72 @@ a:focus-visible {
 }
 
 @keyframes slide-products {
-  0%,
-  28% {
-    transform: translateX(0);
-  }
-
-  33%,
-  61% {
-    transform: translateX(-33.333%);
-  }
-
-  66%,
-  94% {
-    transform: translateX(-66.666%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+  0%, 32% { transform: translateX(0); }
+  33%, 65% { transform: translateX(-33.333%); }
+  66%, 98% { transform: translateX(-66.666%); }
+  99%, 100% { transform: translateX(0); }
 }
 
-.featured-viewport:hover .featured-track {
+.featured-viewport:hover .featured-track,
+.featured-viewport:focus-within .featured-track {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .featured-track {
-    animation: none;
+  #featured .featured-track { animation: none; }
+}
+
+/* Tarjeta del destacado: la imagen completa es un enlace
+   y al hacer hover aparece un overlay con nombre y precio. */
+.featured-card {
+  position: relative;
+  display: block;
+}
+
+.featured-card img {
+  transition: filter 0.25s ease;
+}
+
+.featured-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px;
+  text-align: center;
+  background: rgba(9, 43, 87, 0.45);
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.featured-card__name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.featured-card__price {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.featured-card:hover img,
+.featured-card:focus-visible img {
+  filter: brightness(0.5);
+}
+
+.featured-card:hover .featured-card__overlay,
+.featured-card:focus-visible .featured-card__overlay {
+  opacity: 1;
+}
+
+/* En dispositivos táctiles (sin hover) el overlay queda siempre visible */
+@media (hover: none) {
+  .featured-card__overlay {
+    opacity: 1;
   }
 }
 
@@ -843,9 +908,7 @@ footer small {
     padding: 0;
   }
 
-  #hero {
-    margin: 32px 0;
-  }
+  /* Header del home ya tiene padding-top, no lo repito aquí */
 
   #featured,
   #products,

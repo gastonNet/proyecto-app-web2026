@@ -38,4 +38,9 @@ entender y explicar.
 18. Se arregla el maquetado de beneficios/legales y los titulos del home
 
 19. Se agrega un banner, nombre a la tienda y borra el carrito en la pagina de admin, se le pide a la ia optimizar la imagen.png a webp.
-.....
+
+20. Se arregla el filtro para que sea mas dinamico y cuando se cambia una opcion empiece a filtrar.
+
+21. Se mejora el hero, y acomodoa el layout --container. 
+
+22. se mejora la seccion de destacados y navbar en admin y producto.
